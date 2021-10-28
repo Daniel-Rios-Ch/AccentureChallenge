@@ -73,7 +73,7 @@ public class PlaceServiceImpl implements PlaceService {
 
 		place.setName(place.getName());
 		place.setReviews(update.getReviews());
-		place.setReviews(update.getReviews());
+		place.setMenus(update.getMenus());
 		place.setLocation(update.getLocation());
 		place.setScore(update.getScore());
 		repository.save(place);
