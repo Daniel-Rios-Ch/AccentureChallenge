@@ -53,7 +53,7 @@ services:
   corner-service:
     environment:
       CONFIG_SERVICE_PASSWORD: $CONFIG_SERVICE_PASSWORD
-      ACCOUNT_SERVICE_PASSWORD: $CORNER_SERVICE_PASSWORD
+      CORNER_SERVICE_PASSWORD: $CORNER_SERVICE_PASSWORD
       MONGODB_PASSWORD: $MONGODB_PASSWORD
     image: sqshq/cornerapp-corner-service
     restart: always
