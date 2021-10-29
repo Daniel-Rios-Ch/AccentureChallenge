@@ -142,13 +142,14 @@
     </style>
     <script src="js/lib/jquery.min.js"></script>
     <script src="js/lib/touchscreens.js"></script>
+    <script src="js/registro_formulario.js"></script>
   </head>
   <body>
 
     
     <div class="main-block">
       <h1>Registro de Comercio</h1>
-      <form action="/">
+      <form id="registrar">
         <hr>
         <div class="account-type">
           <input type="radio" value="none" id="radioOne" name="account" checked/>
@@ -157,20 +158,20 @@
           <label for="radioTwo" class="radio">Persona Moral</label>
         </div>
         <hr>
-        <label id="icon" for="name"><i class="fas fa-envelope"></i></label>
-        <input type="text" name="name" id="Email" placeholder="Correo Electrónico" required/>
-        <label id="icon" for="name"><i class="fas fa-user"></i></label>
-        <input type="text" name="name" id="Nombre" placeholder="Nombre" required/>
-        <label id="icon" for="name"><i class="fas fa-unlock-alt"></i></label>
-        <input type="password" name="name" id="Contra" placeholder="Contraseña" required/>
-        <label id="icon" for="name"><i class="fas fa-signature"></i></label>
-        <input type="text" name="name" id="NombreComercio" placeholder="Nombre Comercio" required/>
-        <label id="icon" for="name"><i class="fas fa-address-book"></i></label>
-        <input type="text" name="name" id="Ubicacion" placeholder="Ubicación" required/>
-        <label id="icon" for="name"><i class="fas fa-info"></i></label>
-        <input type="text" name="name" id="Descripcion" placeholder="Descripción Negocio" required/>
+        <label id="icon" for="email"><i class="fas fa-envelope"></i></label>
+        <input type="text" name="email" id="email" placeholder="Correo Electrónico" required/>
+        <label id="icon" for="nombre"><i class="fas fa-user"></i></label>
+        <input type="text" name="nombre" id="nombre" placeholder="Nombre" required/>
+        <label id="icon" for="contra"><i class="fas fa-unlock-alt"></i></label>
+        <input type="password" name="contra" id="contra" placeholder="Contraseña" required/>
+        <label id="icon" for="nombreComercio"><i class="fas fa-signature"></i></label>
+        <input type="text" name="nombreComercio" id="nombreComercio" placeholder="Nombre Comercio" required/>
+        <label id="icon" for="ubicacion"><i class="fas fa-address-book"></i></label>
+        <input type="text" name="ubicacion" id="ubicacion" placeholder="Ubicación" required/>
+        <label id="icon" for="descripcion"><i class="fas fa-info"></i></label>
+        <input type="text" name="descripcion" id="descripcion" placeholder="Descripción Negocio" required/>
         <label id="icon" for="categoria"><i class="fas fa-info" ></i></label>
-        <input name="name" id="name" list="categoria" placeholder="Categoría">
+        <input name="name" id="categoria" list="categoria" placeholder="Categoría">
         <datalist id="categoria">
             <option value="Restaurante">
             <option value="Café">
