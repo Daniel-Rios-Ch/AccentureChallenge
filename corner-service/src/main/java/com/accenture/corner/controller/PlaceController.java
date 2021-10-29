@@ -14,13 +14,11 @@ public class PlaceController {
 	@Autowired
 	private PlaceService placeService;
 
-	@PreAuthorize("#oauth2.hasScope('server') or #name.equals('demo')")
 	@RequestMapping(path = "/{placeName}", method = RequestMethod.GET)
 	public Place getPlaceByName(@PathVariable String placeName) {
 		return placeService.findByName(placeName);
 	}
 
-	@PreAuthorize("#oauth2.hasScope('server') or #name.equals('demo')")
 	@RequestMapping(value = "/{placeName}", method = RequestMethod.PUT)
 	public void savePlace(@PathVariable String placeName, @Valid @RequestBody Place place) {
 		placeService.saveChanges(placeName, place);

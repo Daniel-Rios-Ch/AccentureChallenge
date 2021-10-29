@@ -12,11 +12,19 @@ import org.springframework.stereotype.Service;
 import org.springframework.util.Assert;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Random;
 
 @Service
 public class PlaceServiceImpl implements PlaceService {
 
 	private final Logger log = LoggerFactory.getLogger(getClass());
+
+	private List<String> randomTowns = Arrays.asList("San Pedro Garza Garcia", "Monterrey", "Santa Catarina", "Escobedo", "San Nicolas", "Apodaca", "Guadalupe");
+	private List<String> randomAddresses = Arrays.asList("Av Roberto Garza Sada 150", "Juan de Lagos 203", "Olmos 234", "Onyx 150", "Botanico 190", "Corderos 20");
+	private List<LocationType> locationTypes = Arrays.asList(LocationType.BAR, LocationType.BAKERY, LocationType.COFFEE, LocationType.RESTAURANT);
+
 
 	@Autowired
 	private CornerRepository repository;
@@ -45,10 +53,10 @@ public class PlaceServiceImpl implements PlaceService {
 		Location location = new Location();
 		location.setCountry("Mexico");
 		location.setState("Nuevo Leon");
-		location.setTown("San Pedro Garza Garcia");
-		location.setAddress("Av. Gomez Morin 181");
+		location.setTown(randomTowns.get(new Random().nextInt(randomTowns.size())));
+		location.setAddress(randomAddresses.get(new Random().nextInt(randomAddresses.size())));
+		location.setLocationType(locationTypes.get(new Random().nextInt(locationTypes.size())));
 		location.setCoordinates("0, 0, 0");
-		location.setLocationType(LocationType.DEFAULT);
 		place.setLocation(location);
 
 		place.setReviews(new ArrayList<>());
