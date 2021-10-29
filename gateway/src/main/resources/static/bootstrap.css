@@ -8,11 +8,35 @@
  * Designed and built with all the love in the world by @mdo and @fat.
  */
 
+/*CSS FOR ACCENTURE*/
 
+.float-container {
+  height: 700px;
 
+}
+.float-child-left {
+  width: 29%;
+  float: left;
+  height: 680px;
+  background-color: #E64546;
+  color: white;
+  text-align: center;
+}
+.float-child-left h2{
+  font-size: 45px;
+  padding: 10px;
+}
+.float-child-left h4{
+  font-size: 30px;
+  padding: 20px;
+}
+.float-child-right{
+  width: 70%;
+  float: right;
+  height: 680px;
+  border: 3px solid #E64546;
+}
  
-
-
  /*Custom CSS */
 
 
