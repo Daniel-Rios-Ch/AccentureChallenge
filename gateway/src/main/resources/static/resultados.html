@@ -14,7 +14,12 @@
         <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap" rel="stylesheet">
         <link rel="preconnect" href="https://fonts.gstatic.com"> 
-        <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;500&family=Roboto+Slab&display=swap" rel="stylesheet">     
+        <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;500&family=Roboto+Slab&display=swap" rel="stylesheet">
+
+        <!--Leaflet JS-->
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin=""/>
+        <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
+
         <style>
             .center {
                 display: block;
@@ -53,6 +58,11 @@
             .fa-youtube {
             background: #bb0000;
             color: white;
+            }
+
+            /*Leaflet JS map*/
+            #map {
+                height: 300px;
             }
             
         </style>
@@ -93,6 +103,7 @@
            </div>
            <div class="float-child-right">
                <h3>columna derecha, en donde estará el mapa</h3>
+               <div id="map"></div>
            </div>
 
        </div>
@@ -113,5 +124,17 @@
 <div class="modal-footer">
     <footer><p style="color: white;">&#169; 22 Corner, All rights reserved</p></footer>
 </div>
+<!--Leaflet JS script-->
+<script>
+    var mymap = L.map('map').setView([25.7, -100.3], 13);
+    L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+        attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+        maxZoom: 18,
+        id: 'mapbox/streets-v11',
+        tileSize: 512,
+        zoomOffset: -1,
+        accessToken: "pk.eyJ1IjoibWlndWVsdG9ybmVybyIsImEiOiJja3ZicTFzd2gwZm94MnVueTVqb2U2NzAyIn0.6JPVwuhvuTPNUKljcIQ1Mw"
+    }).addTo(mymap);
+</script>
 </body>
 </html>
